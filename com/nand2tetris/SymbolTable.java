@@ -3,9 +3,6 @@ package com.nand2tetris;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by usename on 23.04.17.
- */
 public class SymbolTable {
     private Map<String, Integer> symbolicTable = new HashMap<>();
 
@@ -19,7 +16,6 @@ public class SymbolTable {
         symbolicTable.put("ARG", 0x0002);
         symbolicTable.put("THIS", 0x0003);
         symbolicTable.put("THAT", 0x0004);
-        symbolicTable.put("ARG", 0x0002);
         symbolicTable.put("SCREEN", 0x4000);
         symbolicTable.put("KBD", 0x6000);
 

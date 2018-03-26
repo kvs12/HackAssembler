@@ -2,14 +2,10 @@ package com.nand2tetris;
 
 import java.io.*;
 
-/**
- * Created by usename on 16.04.17.
- */
 public class Parser {
     private BufferedReader source;
     private File sourceFile;
     private String currentCommand = null;
-    private final int DEFAULT_LINE_LENGTH = 80;
 
     public Parser(File source) throws FileNotFoundException {
         this.source = new BufferedReader(new FileReader(source));
@@ -110,7 +106,8 @@ public class Parser {
      */
     public boolean hasMoreCommands() {
         try {
-            source.mark(DEFAULT_LINE_LENGTH);
+            int lineLength = 80;
+            source.mark(lineLength);
             String line;
             while ((line = source.readLine()) != null) {
                 if (!line.isEmpty() && !line.trim().startsWith("//")) {
@@ -119,7 +116,7 @@ public class Parser {
                     return true;
                 }
                 // Invoke mark before next line reading
-                source.mark(DEFAULT_LINE_LENGTH);
+                source.mark(lineLength);
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -3,9 +3,6 @@ package com.nand2tetris;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by usename on 23.04.17.
- */
 public class Code {
     private static Map<String, String> destMap = new HashMap<>(8);
     private static Map<String, String> jumpMap = new HashMap<>(8);
@@ -84,27 +81,27 @@ public class Code {
     }
 
     private String dest(String mnem) {
-        final String mnenUpper = String.valueOf(mnem).toUpperCase();
-        if (destMap.containsKey(mnenUpper)) {
-            return destMap.get(mnenUpper);
+        final String mnemUpper = String.valueOf(mnem).toUpperCase();
+        if (destMap.containsKey(mnemUpper)) {
+            return destMap.get(mnemUpper);
         } else {
             throw new RuntimeException("Unknown mnemonic for dest: " + mnem);
         }
     }
 
     private String comp(String mnem) {
-        final String mnenUpper = mnem.toUpperCase();
-        if (compMap.containsKey(mnenUpper)) {
-            return compMap.get(mnenUpper);
+        final String mnemUpper = mnem.toUpperCase();
+        if (compMap.containsKey(mnemUpper)) {
+            return compMap.get(mnemUpper);
         } else {
             throw new RuntimeException("Unknown mnemonic for comp: " + mnem);
         }
     }
 
     private String jump(String mnem) {
-        final String mnenUpper = String.valueOf(mnem).toUpperCase();
-        if (jumpMap.containsKey(mnenUpper)) {
-            return jumpMap.get(mnenUpper);
+        final String mnemUpper = String.valueOf(mnem).toUpperCase();
+        if (jumpMap.containsKey(mnemUpper)) {
+            return jumpMap.get(mnemUpper);
         } else {
             throw new RuntimeException("Unknown mnemonic for jump: " + mnem);
         }
